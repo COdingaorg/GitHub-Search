@@ -1,4 +1,5 @@
 export class UserClass {
+  
   constructor(
     public login:string, 
     public name:string, 
