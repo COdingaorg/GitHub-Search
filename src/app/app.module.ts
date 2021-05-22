@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { GitResultsComponent } from './git-results/git-results.component';
+import { UserResultsComponent } from './user-results/user-results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     UserSearchComponent,
-    GitResultsComponent
+    GitResultsComponent,
+    UserResultsComponent
   ],
   imports: [
     BrowserModule,

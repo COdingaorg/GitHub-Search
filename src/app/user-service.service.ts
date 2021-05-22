@@ -9,8 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class UserServiceService {
 
   User: UserClass;
-  userRepo!: RepoClass;
-  repoData!: [];
+  userRepo: RepoClass;
+  repoUserData:[]|any;
+  repoData: []|any;
 
   constructor(private http: HttpClient) {
     this.User = new UserClass("", "", 0, 0, 0, "", "  ");
@@ -27,7 +28,7 @@ export class UserServiceService {
       location: string,
       url: string
     }
-    let promise = new Promise((resolve, reject) => {
+    let promise = new Promise<void>((resolve, reject) => {
       this.http.get<ApiResponse>('environment.apiurl' + userName).toPromise().then(response => {
         this.User.name = response.name,
           this.User.login = response.login,
@@ -37,7 +38,24 @@ export class UserServiceService {
           this.User.following = response.following,
           this.User.location = response.location,
           this.User.url = response.url
-      })
+
+          resolve()
+      },
+        error => {
+          reject(error)
+        })
+      this.http.get<any>('environment.apiurl' + userName + '/repos').toPromise().then(response => {
+        for (let i = 0; i < response.length; i++) {
+          this.repoUserData = new RepoClass(response[i].name, response[i].html_url, response[i].descrition,
+            response[i].license, response[i].language, response[i].forks, response[i].watchers);
+          this.repoData.push(this.repoUserData);
+        }
+        resolve();
+      },
+        error => {
+          reject(error)
+        })
     })
+    return promise;
   }
 }
