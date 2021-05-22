@@ -1,0 +1,33 @@
+@font-face {
+  font-family: montserrat;
+  src: url('../assets/web-fonts/Montserrat/Montserrat-Medium.otf');
+  font-weight: medium;
+}
+@font-face {
+  font-family: montserrat-light;
+  src: url('../assets/web-fonts/Montserrat/MontserratAlternates-Light.otf');
+  font-weight: lighter;
+}
+@font-face {
+  font-family: pier-sans-bold;
+  src: url('../assets/web-fonts/PierSans/PierSans-Bold.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: pier-sans;
+  src: url('../assets/web-fonts/PierSans/PierSans-Light.otf');
+  font-weight: lighter;
+}
+@font-face {
+  font-family: nexa;
+  src: url('../assets/web-fonts/Nexa/Nexa-Light.otf');
+  font-weight: lighter;
+}
+@font-face {
+  font-family: nexa-bold;
+  src: url('../assets/web-fonts/Nexa/Nexa-Bold.otf');
+  font-weight: bold;
+}
+*{
+  font-family: nexa;
+}
