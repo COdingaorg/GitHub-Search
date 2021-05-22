@@ -1,27 +1,26 @@
-# GithubSearch
+## Author
+Caleb Ouma Odinga 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+## GitHub Search
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+Use git, Github and any editor or IDE to see the codes and the rendered frontend.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Please make sure to update tests as appropriate.
 
-## Running end-to-end tests
+## Website's link
+to view Live click Here--https://calebodinga.github.io/Caleb-Odinga-My-Portfolio/index.html
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## License
+This Website uses MIT LICENSE. For more Read License.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Copyright (c) 2021 Caleb Odinga

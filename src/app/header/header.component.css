@@ -1,0 +1,11 @@
+a{
+  padding-top: 20px;
+  margin: 20px 40px;
+  font-family: pier-sans-bold;
+}
+.container{
+  margin-top: 10px;
+}
+hr{
+  box-shadow: 2px 2px 4px grey;
+}
