@@ -7,16 +7,17 @@ import { UserServiceService } from '../user-service.service';
   styleUrls: ['./user-search.component.css']
 })
 export class UserSearchComponent implements OnInit {
-  userName!:string;
-  searchGithub!: UserServiceService;
+  userName: string | any;
+  userServiceService!: UserServiceService;
 
-  submitName(){
-    this.searchGithub.getUserData(this.userName)
+  submitName() {
+    this.userServiceService.getUserData(this.userName)
   }
+  // constructor(userServiceService: UserServiceService) {
+  //   this.userServiceService = userServiceService
+  // }
 
-  constructor(searchGithub:UserServiceService) {
-    this.searchGithub = searchGithub
-   }
+
 
   ngOnInit(): void {
   }

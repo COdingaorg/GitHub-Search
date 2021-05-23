@@ -29,7 +29,7 @@ export class UserServiceService {
       url: string
     }
     let promise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse>('environment.apiurl' + userName).toPromise().then(response => {
+      this.http.get<ApiResponse>('https://api.github.com/users/' + 'john').toPromise().then(response => {
         this.User.name = response.name,
           this.User.login = response.login,
           this.User.name = response.name,
@@ -46,9 +46,9 @@ export class UserServiceService {
         })
       this.http.get<any>('environment.apiurl' + userName + '/repos').toPromise().then(response => {
         for (let i = 0; i < response.length; i++) {
-          this.repoUserData = new RepoClass(response[i].name, response[i].html_url, response[i].descrition,
+          this.userRepo = new RepoClass(response[i].name, response[i].html_url, response[i].descrition,
             response[i].license, response[i].language, response[i].forks, response[i].watchers);
-          this.repoData.push(this.repoUserData);
+          this.repoData.push(this.userRepo);
         }
         resolve();
       },

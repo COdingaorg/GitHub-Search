@@ -1,4 +1,5 @@
-<form (ngSubmit)='submitName()'>
-  <input type="text" name="userName" id="userName" [(ngModel)]=userName placeholder="Enter user to search...">
+<form #searchForm='ngForm' (ngSubmit)='submitName()'>
+  <input type="text" name="userName" id="userName" [(ngModel)]='userName' placeholder="Enter user to search...">
   <button type="submit" class="btn btn-success">Get User</button>
 </form>
+<app-user-results></app-user-results>
