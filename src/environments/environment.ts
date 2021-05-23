@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiurl: 'https://api.github.com/users/'
+  apiurl: 'https://api.github.com/users/',
+  apikey:''
 };
 
 /*

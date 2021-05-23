@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-user-search',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-search.component.css']
 })
 export class UserSearchComponent implements OnInit {
- userName!:string
+ userName!:string;
+ userServiceService!:UserServiceService;
 
+ submitForm(){
+   this.userServiceService.getUserData(this.userName)
+ }
  
   constructor() { }
 
