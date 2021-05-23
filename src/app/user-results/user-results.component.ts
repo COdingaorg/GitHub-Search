@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserClass } from '../user-class';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-user-results',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-results.component.css']
 })
 export class UserResultsComponent implements OnInit {
+  user!:UserClass;
+  userRepository:any=[];
+  userService!: UserServiceService;
 
-  constructor() { }
+  // constructor(userService:UserServiceService) { 
+  //   this.userService = userService
+  // }
 
   ngOnInit(): void {
+    this.user = this.userService.user;
+    this.userRepository = this.userService.repositoryData
   }
 
 }

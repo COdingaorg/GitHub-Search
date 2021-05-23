@@ -14,7 +14,9 @@ export class UserSearchComponent implements OnInit {
    this.userServiceService.getUserData(this.userName)
  }
  
-  constructor() { }
+  // constructor(userServiceService:UserServiceService) { 
+  //   this.userServiceService = userServiceService
+  // }
 
   ngOnInit(): void {
   }
