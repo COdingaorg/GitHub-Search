@@ -16,4 +16,15 @@ export class UserServiceService {
     this.user = new UserClass("", "", 0, 0, 0, "", "");
     this.repository = new RepoClass('', '', '', '', '', 0, 0);
   }
+  getUserData(userName: string) {
+    interface ApiResponse {
+      login: string,
+      name: string,
+      id: number,
+      followers: number,
+      following: number,
+      location: string,
+      url: string,
+    }
+  }
 }
