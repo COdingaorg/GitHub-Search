@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class UserServiceService {
   user!: UserClass;
   repository!: RepoClass;
-  repositoryData = [];
+  repositoryData:any=[];
 
 
   constructor(private http: HttpClient) {
@@ -39,8 +39,21 @@ export class UserServiceService {
         this.user.url = response.url;
 
         resolve()
-      }
-      )
+      },
+      error=>{
+        reject(error)
+      })
+      this.http.get<any>(environment.apiurl+userName+'/repo').toPromise().then(response => {
+        for(let i=0; i<response.length; i++){
+          this.repository = new RepoClass(response[i].name, response[i].html_url,response[i].description,response[i].license,response[i].language,response[i].forks,response[i].watchers)
+          this.repositoryData.push(this.repository)
+        }
+
+        resolve()
+      },
+      error=>{
+        reject(error)
+      })
     })
   }
 }

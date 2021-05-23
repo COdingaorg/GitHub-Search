@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSearchComponent implements OnInit {
  userName!:string
+
+ 
   constructor() { }
 
   ngOnInit(): void {
