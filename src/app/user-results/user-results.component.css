@@ -1,0 +1,22 @@
+.col-md-2{
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .6);
+  margin: 6px;
+  margin-top: 20px;
+  text-overflow:clip;
+  border:2px solid white;
+  box-shadow: 2px 2px 6px 2px gray;
+}
+img{
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+}
+.repos{
+  display: flex;
+  flex-wrap: wrap;
+}
+.repos>div{
+  width: auto;
+}

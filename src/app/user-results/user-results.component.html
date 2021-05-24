@@ -1,28 +1,25 @@
-<div class="row">
-  <div class="col-md-4">
-    <h3>User Details</h3>
-    <p>Name: {{userr.name}}</p>
-    <p>Github UserName: {{userr.login}}</p>
-    <p>Location: {{userr.location}}</p>
-
-
-    login:string, 
-    public id:number,
-    public name:string, 
-    public followers:number,
-    public following:number,
-    public location:string,
-    public url:string
-  </div>
-  <div class="col-md-8">
-    <div *ngFor='let userRepository of userRepositories' class="col-md-3">
-      <p>Repo Name: {{userRepository.name}}</p>
-      name:string,
-    public html_url:string,
-    public description:string,
-    public license:string,
-    public language:string,
-    public forks:number,
-    public watchers:number
+<div class="results">
+  <div class="row">
+    <div class="col-md-7">
+      <h3>User Details</h3>
+      <h4>Github User Name: </h4><small>{{userr.login}}</small>
+      <p>Name :{{userr.name}} </p>
+      <p> Followers: {{userr.followers}} | Following: {{userr.following}}</p>
+      <p>Location : {{userr.location}}</p>
+      <p>More Info follow :{{userr.url}}</p>
+    </div>
+    <div class="col-md-5">
+      <img src="../../assets/images/angular.jpeg" alt="made wit Angular">
     </div>
   </div>
+  <div class="row repos">
+    <div *ngFor='let userRepository of userRepositories' class="flex flex-column col-md-2">
+      <h5>Repository Name: {{userRepository.name}}</h5>
+      <small>{{userRepository.html_url}}</small>
+      <p>{{userRepository.description}}</p>
+      <i>{{userRepository.license}}</i>
+      <p>{{userRepository.language}}</p>
+      <h6>Forks: {{userRepository.forks}} | watchers {{userRepository.watchers}}</h6>
+    </div>
+  </div>
+</div>
