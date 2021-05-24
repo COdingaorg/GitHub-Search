@@ -8,17 +8,17 @@ import { UserServiceService } from '../user-service.service';
   styleUrls: ['./user-results.component.css']
 })
 export class UserResultsComponent implements OnInit {
-  user!:UserClass;
-  userRepository:any=[];
-  userService!: UserServiceService;
+  userr: UserClass;
+  userRepository = [];
+  userServiceService: UserServiceService;
 
-  // constructor(userService:UserServiceService) { 
-  //   this.userService = userService
+  // constructor(userServiceService: UserServiceService) {
+  //   this.userServiceService = userServiceService
   // }
 
-  ngOnInit(): void {
-    this.user = this.userService.user;
-    this.userRepository = this.userService.repositoryData
+  ngOnInit() {
+    this.userr = this.userServiceService.user;
+    this.userRepository = this.userServiceService.newUserData
   }
 
 }
