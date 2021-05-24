@@ -60,15 +60,6 @@ export class UserServiceService {
     })
   }
   getRepo(userName: string) {
-    // interface APIResponse {
-    //   name: string,
-    //   html_url: string,
-    //   description: string,
-    //   license: string,
-    //   language: string,
-    //   forks: number,
-    //   watchers: number
-    //}
     let promise = new Promise<void>((resolve, reject) => {
       this.http.get<any>(environment.apiurl + userName + '/repos').toPromise().then(response => {
         for (let i = 0; i < response.length; i++) {

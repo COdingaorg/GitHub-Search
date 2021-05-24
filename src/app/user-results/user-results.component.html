@@ -1,13 +1,28 @@
-<h3>User Details</h3>
-<p>{{userr.name}}</p>
-<p>{{userr.login}}</p>
-<p>{{userr.location}}</p>
-
-<div *ngFor='let userRepository of userRepositories'>Repository
-  {{userRepository.name}}
-</div>
+<div class="row">
+  <div class="col-md-4">
+    <h3>User Details</h3>
+    <p>Name: {{userr.name}}</p>
+    <p>Github UserName: {{userr.login}}</p>
+    <p>Location: {{userr.location}}</p>
 
 
-
-
-
+    login:string, 
+    public id:number,
+    public name:string, 
+    public followers:number,
+    public following:number,
+    public location:string,
+    public url:string
+  </div>
+  <div class="col-md-8">
+    <div *ngFor='let userRepository of userRepositories' class="col-md-3">
+      <p>Repo Name: {{userRepository.name}}</p>
+      name:string,
+    public html_url:string,
+    public description:string,
+    public license:string,
+    public language:string,
+    public forks:number,
+    public watchers:number
+    </div>
+  </div>
