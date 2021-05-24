@@ -4,20 +4,23 @@ import { UserServiceService } from '../user-service.service';
 @Component({
   selector: 'app-user-search',
   templateUrl: './user-search.component.html',
-  styleUrls: ['./user-search.component.css']
+  styleUrls: ['./user-search.component.css'],
+  providers:[UserServiceService]
+
 })
 export class UserSearchComponent implements OnInit {
-  userName: string | any;
-  userServiceService!: UserServiceService;
+ userName:string;
+ userServiceService:UserServiceService;
 
-  submitName() {
-    this.userServiceService.getUserData(this.userName)
-  }
-  // constructor(userServiceService: UserServiceService) {
-  //   this.userServiceService = userServiceService
-  // }
-
-
+ submitForm(){
+   this.userServiceService.getUser(this.userName)
+   this.userServiceService.getRepo(this.userName)
+   
+ }
+ 
+    constructor(userServiceService:UserServiceService) { 
+      this.userServiceService = userServiceService
+    }
 
   ngOnInit(): void {
   }

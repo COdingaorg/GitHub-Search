@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from '../user-service.service';
 import { UserClass } from '../user-class';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-user-results',
@@ -8,17 +8,17 @@ import { UserClass } from '../user-class';
   styleUrls: ['./user-results.component.css']
 })
 export class UserResultsComponent implements OnInit {
-  userHere: UserClass|any;
-  userRepoDetails = [];
-  userServiceService!: UserServiceService;
+  userr: UserClass;
+  userRepositories = [];
+  userServiceService: UserServiceService;
 
   constructor(userServiceService: UserServiceService) {
     this.userServiceService = userServiceService
   }
 
-   ngOnInit(): void {
-    this.userHere = this.userServiceService.User;
-    this.userRepoDetails= this.userServiceService.repoData;
+  ngOnInit() {
+    this.userr = this.userServiceService.user;
+    this.userRepositories = this.userServiceService.repositoryData
   }
 
 }

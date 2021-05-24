@@ -1,9 +1,13 @@
-<div> kilo
-  <h4>Github Name: {{userHere.login}}</h4>
-      <p>Full Name:{{userHere.name}}</p>
-      <p>followers: {{userHere.followers}}</p>
-      <p>Location: {{userHere.location}}</p>
-    <p>User Results</p>
-  
+<h3>User Details</h3>
+<p>{{userr.name}}</p>
+<p>{{userr.login}}</p>
+<p>{{userr.location}}</p>
+
+<div *ngFor='let userRepository of userRepositories'>Repository
+  {{userRepository.name}}
 </div>
+
+
+
+
 
