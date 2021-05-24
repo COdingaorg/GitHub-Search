@@ -14,7 +14,6 @@ export class UserServiceService {
   repositoryData=[];
   newUserData:any=[];
 
-
   constructor(private http: HttpClient) {
     this.user = new UserClass("",0,"",0, 0, "", "");
     this.repository = new RepoClass('', '', '', '', '', 0, 0);
@@ -31,7 +30,7 @@ export class UserServiceService {
     }
 
     let promise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/COdingaorg').toPromise().then(Response => {
+      this.http.get<ApiResponse>(environment.apiurl+userName+"?access_token="+environment.apikey).toPromise().then(Response => {
         this.user.login = Response.login;
         this.user.name = Response.name;
         this.user.id = Response.id;
@@ -45,7 +44,7 @@ export class UserServiceService {
       error=>{
         reject(error)
       })
-      this.http.get<any>('https://api.github.com/users/COdingaorg/repos').toPromise().then(response => {
+      this.http.get<any>(environment.apiurl+userName+'/repos').toPromise().then(response => {
         for(let i=0; i<response.length; i++){
           this.newUserData = new RepoClass(response[i].name, response[i].html_url,response[i].description,response[i].license,response[i].language,response[i].forks,response[i].watchers)
           this.repositoryData.push(this.newUserData)

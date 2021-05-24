@@ -12,9 +12,9 @@ export class UserResultsComponent implements OnInit {
   userRepository = [];
   userServiceService: UserServiceService;
 
-  // constructor(userServiceService: UserServiceService) {
-  //   this.userServiceService = userServiceService
-  // }
+  constructor(userServiceService: UserServiceService) {
+    this.userServiceService = userServiceService
+  }
 
   ngOnInit() {
     this.userr = this.userServiceService.user;
