@@ -1,25 +1,39 @@
-<div class="results">
-  <div class="row">
-    <div class="col-md-7">
-      <h3>User Details</h3>
-      <h4>Github User Name: </h4><small>{{userr.login}}</small>
-      <p>Name :{{userr.name}} </p>
-      <p> Followers: {{userr.followers}} | Following: {{userr.following}}</p>
-      <p>Location : {{userr.location}}</p>
-      <p>More Info follow :{{userr.url}}</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="results">
+    <div class="row">
+      <div class="col-md-7">
+        <h3>User Details</h3>
+        <h4>Github User Name: </h4><small>{{userr.login}}</small>
+        <p>Name :{{userr.name}} </p>
+        <p> Followers: {{userr.followers}} | Following: {{userr.following}}</p>
+        <p>Location : {{userr.location}}</p>
+        <p>More Info follow :{{userr.url}}</p>
+      </div>
+      <div class="col-md-5">
+        <img src="../../assets/images/angular.jpeg" alt="made wit Angular">
+      </div>
     </div>
-    <div class="col-md-5">
-      <img src="../../assets/images/angular.jpeg" alt="made wit Angular">
+    <div class="row repos">
+      <div *ngFor='let userRepository of userRepositories' class="flex flex-column col-md-2">
+        <h5>Repository Name: {{userRepository.name}}</h5>
+        <small>{{userRepository.html_url}}</small>
+        <p>{{userRepository.description}}</p>
+        <i>{{userRepository.license}}</i>
+        <p>{{userRepository.language}}</p>
+        <h6>Forks: {{userRepository.forks}} | watchers {{userRepository.watchers}}</h6>
+      </div>
     </div>
   </div>
-  <div class="row repos">
-    <div *ngFor='let userRepository of userRepositories' class="flex flex-column col-md-2">
-      <h5>Repository Name: {{userRepository.name}}</h5>
-      <small>{{userRepository.html_url}}</small>
-      <p>{{userRepository.description}}</p>
-      <i>{{userRepository.license}}</i>
-      <p>{{userRepository.language}}</p>
-      <h6>Forks: {{userRepository.forks}} | watchers {{userRepository.watchers}}</h6>
-    </div>
-  </div>
-</div>
+</body>
+
+</html>
