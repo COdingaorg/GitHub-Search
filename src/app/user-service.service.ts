@@ -44,19 +44,6 @@ export class UserServiceService {
         error => {
           reject(error)
         })
-      //   this.http.get<any>(environment.apiurl + userName + '/repos').toPromise().then(response => {
-      //     for (let i = 0; i < response.length; i++) {
-      //       this.newUserData = new RepoClass(response[i].name, response[i].html_url, response[i].description, response[i].license, response[i].language, response[i].forks, response[i].watchers)
-      //       this.repositoryData.push(this.newUserData)
-      //     }
-
-      //     resolve()
-      //   },
-      //     error => {
-      //       reject(error)
-      //     })
-      // })
-      // return promise;
     })
   }
   getRepo(userName: string) {
