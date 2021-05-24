@@ -36,7 +36,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Website's link
-to view Live click Here--https://COdingaorg.github.io/GitHub-Search/
+to view Live click Here--https://codingaorg.github.io/githubsearch/home
 
 ## License
 This Website uses MIT LICENSE. For more Read License.
