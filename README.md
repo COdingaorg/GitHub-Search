@@ -20,6 +20,7 @@ A user can also navigate to see results page and about page by navigating the bu
 
 # Sample Results
 <img src="./src/assets/images/sampleResults.png">
+
 ## Installation
 Have angular CLI installed in you machine.
 
