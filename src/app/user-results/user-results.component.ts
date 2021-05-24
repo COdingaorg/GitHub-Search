@@ -11,6 +11,8 @@ export class UserResultsComponent implements OnInit {
   userr: UserClass;
   userRepositories = [];
   userServiceService: UserServiceService;
+  
+  
 
   constructor(userServiceService: UserServiceService) {
     this.userServiceService = userServiceService

@@ -15,7 +15,7 @@ export class UserServiceService {
   newUserData: any = [];
 
   constructor(private http: HttpClient) {
-    this.user = new UserClass("", 0, "", 0, 0, "", "");
+    this.user = new UserClass("COdingaorg", 5534613, "Caleb Odinga", 2, 6, "Kenya", "https://api.github.com/users/COdingaorg");
     this.repository = new RepoClass('', '', '', '', '', 0, 0);
   }
   getUser(userName: string) {
