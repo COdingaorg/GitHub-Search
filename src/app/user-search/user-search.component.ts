@@ -14,6 +14,8 @@ export class UserSearchComponent implements OnInit {
 
  submitForm(){
    this.userServiceService.getUser(this.userName)
+   this.userServiceService.getRepo(this.userName)
+   
  }
  
     constructor(userServiceService:UserServiceService) { 

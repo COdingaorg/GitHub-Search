@@ -3,7 +3,11 @@
 <p>{{userr.login}}</p>
 <p>{{userr.location}}</p>
 
-<p>Repository</p>
+<div *ngFor='let userRepository of userRepositories'>Repository
+  {{userRepository.name}}
+</div>
+
+
 
 
 

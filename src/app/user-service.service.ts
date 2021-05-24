@@ -11,11 +11,11 @@ import { environment } from 'src/environments/environment';
 export class UserServiceService {
   user: UserClass;
   repository: RepoClass;
-  repositoryData=[];
-  newUserData:any=[];
+  repositoryData = [];
+  newUserData: any = [];
 
   constructor(private http: HttpClient) {
-    this.user = new UserClass("",0,"",0, 0, "", "");
+    this.user = new UserClass("", 0, "", 0, 0, "", "");
     this.repository = new RepoClass('', '', '', '', '', 0, 0);
   }
   getUser(userName: string) {
@@ -30,7 +30,7 @@ export class UserServiceService {
     }
 
     let promise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiurl+userName+"?access_token="+environment.apikey).toPromise().then(Response => {
+      this.http.get<ApiResponse>(environment.apiurl + userName + environment.apikey).toPromise().then(Response => {
         this.user.login = Response.login;
         this.user.name = Response.name;
         this.user.id = Response.id;
@@ -41,21 +41,46 @@ export class UserServiceService {
 
         resolve()
       },
-      error=>{
-        reject(error)
-      })
-      this.http.get<any>(environment.apiurl+userName+'/repos').toPromise().then(response => {
-        for(let i=0; i<response.length; i++){
-          this.newUserData = new RepoClass(response[i].name, response[i].html_url,response[i].description,response[i].license,response[i].language,response[i].forks,response[i].watchers)
+        error => {
+          reject(error)
+        })
+      //   this.http.get<any>(environment.apiurl + userName + '/repos').toPromise().then(response => {
+      //     for (let i = 0; i < response.length; i++) {
+      //       this.newUserData = new RepoClass(response[i].name, response[i].html_url, response[i].description, response[i].license, response[i].language, response[i].forks, response[i].watchers)
+      //       this.repositoryData.push(this.newUserData)
+      //     }
+
+      //     resolve()
+      //   },
+      //     error => {
+      //       reject(error)
+      //     })
+      // })
+      // return promise;
+    })
+  }
+  getRepo(userName: string) {
+    // interface APIResponse {
+    //   name: string,
+    //   html_url: string,
+    //   description: string,
+    //   license: string,
+    //   language: string,
+    //   forks: number,
+    //   watchers: number
+    //}
+    let promise = new Promise<void>((resolve, reject) => {
+      this.http.get<any>(environment.apiurl + userName + '/repos').toPromise().then(response => {
+        for (let i = 0; i < response.length; i++) {
+          this.newUserData = new RepoClass(response[i].name, response[i].html_url, response[i].description, response[i].license, response[i].language, response[i].forks, response[i].watchers)
           this.repositoryData.push(this.newUserData)
         }
-
         resolve()
       },
-      error=>{
-        reject(error)
-      })
+        error => {
+          reject(error)
+        })
     })
-    return promise;
+    return promise
   }
 }

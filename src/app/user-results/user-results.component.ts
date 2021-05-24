@@ -9,7 +9,7 @@ import { UserServiceService } from '../user-service.service';
 })
 export class UserResultsComponent implements OnInit {
   userr: UserClass;
-  userRepository = [];
+  userRepositories = [];
   userServiceService: UserServiceService;
 
   constructor(userServiceService: UserServiceService) {
@@ -18,7 +18,7 @@ export class UserResultsComponent implements OnInit {
 
   ngOnInit() {
     this.userr = this.userServiceService.user;
-    this.userRepository = this.userServiceService.newUserData
+    this.userRepositories = this.userServiceService.repositoryData
   }
 
 }
