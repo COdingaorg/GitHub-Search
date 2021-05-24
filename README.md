@@ -28,7 +28,7 @@ Use git, Github and any editor or IDE to see the codes and the rendered frontend
 
 ## Usage
 
-
+Ensure you have Angular CLI installed in you machine. Clone this github repository, git ull to your local machine and code away. ng serve to load the project in your server.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -36,7 +36,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Website's link
-to view Live click Here--https://calebodinga.github.io/GitHub-Search/
+to view Live click Here--https://COdingaorg.github.io/GitHub-Search/
 
 ## License
 This Website uses MIT LICENSE. For more Read License.
