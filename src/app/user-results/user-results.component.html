@@ -12,9 +12,9 @@
   <div class="results">
     <div class="row">
       <div class="col-md-7">
-        <h3>User Details</h3>
+        <h3>User Details </h3>
         <h4>Github User Name: </h4><small>{{userr.login}}</small>
-        <p>Name :{{userr.name}} </p>
+        <p>Name :{{userr.name | uppercase}} </p>
         <p> Followers: {{userr.followers}} | Following: {{userr.following}}</p>
         <p>Location : {{userr.location}}</p>
         <p>More Info follow :{{userr.url}}</p>
@@ -29,7 +29,7 @@
         <small>{{userRepository.html_url}}</small>
         <p>{{userRepository.description}}</p>
         <i>{{license}}</i>
-        <p>{{userRepository.language}}</p>
+        <p>{{userRepository.language | uppercase}}</p>
         <h6>Forks: {{userRepository.forks}} | watchers {{userRepository.watchers}}</h6>
       </div>
     </div>
